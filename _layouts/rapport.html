@@ -1,0 +1,10 @@
+---
+layout: default
+---
+<article>
+  <p class="muted">
+    {{ page.date | date: "%d/%m/%Y" }}
+    · <span class="badge {{ page.type }}">{{ page.type | capitalize }}</span>
+  </p>
+  {{ content }}
+</article>
