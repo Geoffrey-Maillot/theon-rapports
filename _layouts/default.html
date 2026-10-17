@@ -344,30 +344,49 @@
       border: 1px solid var(--line);
       border-radius: 16px;
       padding: 18px 20px;
-      position: relative;
-      overflow: hidden;
     }
-    .wx-top { display: flex; align-items: center; justify-content: space-between; }
+    .wx-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
     .wx-city { font-family: var(--serif); font-weight: 600; font-size: 17px; color: var(--ink); }
-    .wx-emoji { font-size: 26px; }
-    .wx-temp {
-      font-family: var(--serif);
-      font-weight: 500;
-      font-size: 46px;
-      line-height: 1;
-      letter-spacing: -0.02em;
-      color: var(--ink);
-      margin: 12px 0 2px;
-    }
-    .wx-cond { color: var(--ink-soft); font-size: 14.5px; margin-bottom: 12px; }
-    .wx-stats {
+    .wx-emoji { font-size: 24px; }
+    .wx-halves { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .wx-half { display: flex; flex-direction: column; min-width: 0; }
+    .wx-label { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+    .wx-t { font-family: var(--serif); font-weight: 500; font-size: 34px; line-height: 1; letter-spacing: -0.02em; color: var(--ink); }
+    .wx-w { font-size: 12.5px; color: var(--ink-soft); margin-top: 6px; }
+
+    /* Events (Calendar widget style) */
+    .evts { margin: 4px 0 8px; }
+    .evt {
       display: flex;
-      gap: 14px;
-      font-family: var(--mono);
-      font-size: 12.5px;
-      color: var(--ink-soft);
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      margin-bottom: 6px;
+      border-radius: 10px;
+      background: color-mix(in srgb, var(--c) 10%, var(--surface));
+      border-left: 4px solid var(--c);
     }
-    .wx-stats span { display: inline-flex; align-items: center; gap: 4px; }
+    .evt-time { font-family: var(--mono); font-size: 12px; color: var(--ink-soft); min-width: 78px; flex-shrink: 0; }
+    .evt-title { flex: 1; font-weight: 600; font-size: 15px; color: var(--ink); }
+    .evt-cal { font-family: var(--mono); font-size: 11px; color: var(--muted); flex-shrink: 0; }
+    .evt.ongoing {
+      background: color-mix(in srgb, var(--c) 22%, var(--surface));
+      box-shadow: inset 0 0 0 1.5px var(--c);
+    }
+    .evt-badge {
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: var(--c);
+      color: #fff;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .day-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 14px 0 6px; }
 
     article blockquote {
       margin: 0 0 16px;
