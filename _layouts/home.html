@@ -14,7 +14,6 @@ layout: default
   <div class="group-label">{{ group.name | date: "%A %d %B %Y" }}</div>
   {% for post in group.items %}
   <a class="entry" href="{{ post.url | relative_url }}">
-    <span class="date">{{ post.date | date: "%H:%M" }}</span>
     <span class="badge">{{ post.type }}</span>
     <span class="title">{{ post.title }}</span>
     <span class="arrow">→</span>
