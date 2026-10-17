@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<div class="hero">
+  <p class="kicker">Journal quotidien</p>
+  <h1>Le cerveau de Théon,<br><em>chaque jour.</em></h1>
+  <p class="lede">Rapports du matin et bilans du soir, publiés automatiquement depuis le second cerveau.</p>
+  <div class="accent-rule"></div>
+</div>
+
+<div class="archive">
+{% assign grouped = site.posts | group_by_exp: "post", "post.date | date: '%Y-%m-%d'" %}
+{% for group in grouped %}
+  <div class="group-label">{{ group.name | date: "%A %d %B %Y" }}</div>
+  {% for post in group.items %}
+  <a class="entry" href="{{ post.url | relative_url }}">
+    <span class="date">{{ post.date | date: "%H:%M" }}</span>
+    <span class="badge">{{ post.type }}</span>
+    <span class="title">{{ post.title }}</span>
+    <span class="arrow">→</span>
+  </a>
+  {% endfor %}
+{% endfor %}
+{% if site.posts.size == 0 %}
+  <p class="lede">Aucun rapport publié pour l'instant.</p>
+{% endif %}
+</div>

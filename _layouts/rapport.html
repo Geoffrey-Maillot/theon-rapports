@@ -1,10 +1,14 @@
 ---
 layout: default
 ---
+<div class="article-head">
+  <div class="meta-row">
+    <span class="badge">{{ page.type }}</span>
+    <span class="date">{{ page.date | date: "%A %d %B %Y" }}</span>
+  </div>
+  <h1>{{ page.title }}</h1>
+  {% if page.subtitle %}<p class="sub">{{ page.subtitle }}</p>{% endif %}
+</div>
 <article>
-  <p class="muted">
-    {{ page.date | date: "%d/%m/%Y" }}
-    · <span class="badge {{ page.type }}">{{ page.type | capitalize }}</span>
-  </p>
   {{ content }}
 </article>
