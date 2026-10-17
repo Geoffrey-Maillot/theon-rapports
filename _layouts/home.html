@@ -11,7 +11,7 @@ layout: default
 <div class="archive">
 {% assign grouped = site.posts | group_by_exp: "post", "post.date | date: '%Y-%m-%d'" %}
 {% for group in grouped %}
-  <div class="group-label">{{ group.name | date: "%A %d %B %Y" }}</div>
+  <div class="group-label">{{ group.name | date: "%d/%m/%Y" }}</div>
   {% for post in group.items %}
   <a class="entry" href="{{ post.url | relative_url }}">
     <span class="badge">{{ post.type }}</span>
